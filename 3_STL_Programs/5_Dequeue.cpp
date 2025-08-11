@@ -2,43 +2,43 @@
 using namespace std;
 
 int main() {
-    list<int> l = {1, 2, 3, 4, 5};
+    deque<int> d = {1, 2, 3, 4, 5};
 
-    // Display the elements of the list
-    cout << "List elements: ";
-    for (int x : l) {
+    // Display the elements of the deque
+    cout << "Deque elements: ";
+    for (int x : d) {
         cout << x << " ";
     }
     cout << endl;
 
     // Add an element to the front
-    l.push_front(0);
+    d.push_front(0);
     cout << "After push_front(0): ";
-    for (int x : l) {
+    for (int x : d) {
         cout << x << " ";
     }
     cout << endl;
 
     // Add an element to the back
-    l.push_back(6);
+    d.push_back(6);
     cout << "After push_back(6): ";
-    for (int x : l) {
+    for (int x : d) {
         cout << x << " ";
     }
     cout << endl;
 
     // Remove an element from the front
-    l.pop_front();
+    d.pop_front();
     cout << "After pop_front(): ";
-    for (int x : l) {
+    for (int x : d) {
         cout << x << " ";
     }
     cout << endl;
 
     // Remove an element from the back
-    l.pop_back();
+    d.pop_back();
     cout << "After pop_back(): ";
-    for (int x : l) {
+    for (int x : d) {
         cout << x << " ";
     }
     cout << endl;
