@@ -6,9 +6,9 @@ int main() {
     cout << "Enter a number: ";
     cin >> n;
     int sum = 0, original = n;
-    int digits = to_string(n).length();
+    int digit;
     while (n > 0) {
-        int digit = n % 10;
+        digit = n % 10;
         sum += digit * digit * digit;
         n /= 10;
     }
