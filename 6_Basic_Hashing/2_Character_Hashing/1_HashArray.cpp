@@ -7,7 +7,7 @@ int main() {
     cin >> s;
 
     // Create a hash array
-    int hash[26] = {0};
+    int hash[256] = {0};
 
     // Hashing the characters
     for (char c : s) {
