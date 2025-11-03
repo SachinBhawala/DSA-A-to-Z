@@ -13,10 +13,12 @@ int main() {
         arr1[index] = it;
         index++;
     }
+
+    arr1.resize(index);
+
     for(int j = 0; j < arr1.size(); j++) {
         cout << arr1[j] << " ";
     }
-
     cout << endl;
 
     // Optimal Approach
@@ -29,8 +31,12 @@ int main() {
             i++;
         }
     }
-    for(int j = 0; j < n; j++) {
+
+    arr2.resize(i + 1);
+
+    for(int j = 0; j < arr2.size(); j++) {
         cout << arr2[j] << " ";
     }
+
     return 0;
 }
