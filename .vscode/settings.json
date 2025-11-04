@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "*.embeddedhtml": "html",
-        "vector": "cpp"
+        "vector": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp"
     }
 }
