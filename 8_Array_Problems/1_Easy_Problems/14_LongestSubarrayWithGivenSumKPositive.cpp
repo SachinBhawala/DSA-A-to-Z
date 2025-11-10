@@ -24,7 +24,22 @@ int main() {
     cout << endl;
 
     // Better approach
-    
+    int len2 = 0;
+    map<long long, int> preSum;
+    long long sum = 0;
+    for(int i = 0; i < arr.size(); i++) {
+        sum += arr[i];
+        if(sum == k) {
+            len2 = max(len2, i + 1);
+        }
+        int rem = sum - k;
+        if(preSum.find(rem) != preSum.end()) {
+            int len = i - preSum[rem];
+            len2 = max(len2, len);
+        }
+        preSum[sum] = i;
+    }
+    cout << "Longest subarray is: " << len2;
 
     cout << endl;
 
