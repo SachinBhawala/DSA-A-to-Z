@@ -23,7 +23,7 @@ int main() {
 
     cout << endl;
 
-    // Better approach
+    // Better approach : TC = O(n long n) SC = O(n)  {For -ve's, zeros, & +ve's}
     int len2 = 0;
     map<long long, int> preSum;
     long long sum = 0;
@@ -32,16 +32,40 @@ int main() {
         if(sum == k) {
             len2 = max(len2, i + 1);
         }
-        int rem = sum - k;
+        long long rem = sum - k;
         if(preSum.find(rem) != preSum.end()) {
             int len = i - preSum[rem];
             len2 = max(len2, len);
         }
-        preSum[sum] = i;
+        if(preSum.find(sum) == preSum.end()) {
+            preSum[sum] = i;
+        }
     }
     cout << "Longest subarray is: " << len2;
 
     cout << endl;
+
+    // Optimal Approach : TC = O(2n), SC = O(1)   {For zeros, & +ve's}
+    int left = 0;
+    int right = 0;
+    int len3 = 0;
+    sum = arr[0];
+    int n = arr.size();
+    while(right < n) {
+        while(left <= right && sum > k) {
+            sum -= arr[left];
+            left++;
+        }
+        if(sum == k) {
+            len3 = max(len3, right - left + 1);
+        }
+        right++;
+        if(right < n) {
+            sum += arr[right];
+        }
+    }
+
+    cout << "Longest subarray is: " << len3; 
 
     return 0;
 }
