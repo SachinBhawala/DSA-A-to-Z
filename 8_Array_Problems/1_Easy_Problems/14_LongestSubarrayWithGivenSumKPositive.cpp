@@ -23,7 +23,7 @@ int main() {
 
     cout << endl;
 
-    // Better approach : TC = O(n long n) SC = O(n)  {For -ve's, zeros, & +ve's}
+    // Better approach : TC = O(n long n) SC = O(n)  {For -ves', zeros, & +ves'}
     int len2 = 0;
     map<long long, int> preSum;
     long long sum = 0;
@@ -45,7 +45,7 @@ int main() {
 
     cout << endl;
 
-    // Optimal Approach : TC = O(2n), SC = O(1)   {For zeros, & +ve's}
+    // Optimal Approach : TC = O(2n), SC = O(1)   {For zeros, & +ves'}
     int left = 0;
     int right = 0;
     int len3 = 0;
