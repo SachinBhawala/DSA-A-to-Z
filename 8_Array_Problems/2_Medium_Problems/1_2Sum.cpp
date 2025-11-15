@@ -16,7 +16,7 @@ int main() {
 
     cout << endl;
 
-    // Better Approach : TC = O(n logn), SC = O(n)
+    // Optimal Approach : TC = O(n logn), SC = O(n)
     map<int, int> m;
     int flag = false;
     for(int i = 0; i < arr.size(); i++) {
@@ -31,11 +31,5 @@ int main() {
     if(flag == false) {
         cout << "No";
     }
-
-    cout << endl;
-
-    // Optimal Approach
-    
-
     return 0;
 }
