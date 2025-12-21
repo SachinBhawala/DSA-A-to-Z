@@ -31,5 +31,23 @@ int main() {
     if(flag == false) {
         cout << "No";
     }
+
+    cout << endl;
+
+    // Another Approach (only for returning the numbers, not the indexes) : TC = O(n logn), SC = O(1)
+    sort(arr.begin(), arr.end());
+    int left = 0;
+    int right = arr.size() - 1;
+    while(left < right) {
+        if((arr[left] + arr[right]) == target) {
+            cout << "Yes\n" << "Index: " << arr[left] << "," << arr[right];
+            break;
+        } else if((arr[left] + arr[right]) > target) {
+            right--;
+        } else {
+            left++;
+        }
+    }
+
     return 0;
 }
