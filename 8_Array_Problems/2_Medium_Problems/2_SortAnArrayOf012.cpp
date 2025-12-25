@@ -43,7 +43,7 @@ int main() {
  
     cout << endl;
 
-    // Optimal Approach (Dutch National Flag Algorithm): TC = O(2n), SC = O(1)
+    // Optimal Approach (Dutch National Flag Algorithm): TC = O(n), SC = O(1)
     vector<int> arr3 = {1, 2, 0, 1, 2, 1, 1, 2, 2, 1, 2, 1, 2, 1, 0, 1, 0, 1, 2, 2, 0};
     int low = 0;
     int mid = 0;
