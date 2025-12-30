@@ -32,7 +32,7 @@ int maxMoney(vector<int>& arr) {
 }
 
 int main() {
-    vector<int> arr = {1, 2, 6, 8, 9};
+    vector<int> arr = {1, 2, 6, 8, 9, 5, 8};
 
     cout << "Maximum Money is : " << maxMoney(arr);
 
