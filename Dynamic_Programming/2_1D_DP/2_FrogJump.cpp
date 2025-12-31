@@ -3,25 +3,25 @@ using namespace std;
 
 // Recursion : TC = O(2^n), SC = O(n)
 int frogJump(int n, vector<int>& height) {
-    if(n == 0) return 0;
-    int left = frogJump(n - 1, height) + abs(height[n] - height[n - 1]);
+    if(n == 1) return 0;
+    int left = frogJump(n - 1, height) + abs(height[n - 1] - height[n - 2]);
     int right = INT_MAX;
-    if(n > 1) {
-        right = frogJump(n - 2, height) + abs(height[n] - height[n - 2]);
+    if(n > 2) {
+        right = frogJump(n - 2, height) + abs(height[n - 1] - height[n - 3]);
     }
     return min(left, right);
 }
 
 // DP (Memoization) : TC = O(n), SC = O(2n)
 int frogJumpDP1(int n, vector<int>& height, vector<int>& dp) {
-    if(n == 0) return 0;
+    if(n == 1) return 0;
     if(dp[n] != -1) {
         return dp[n];
     }
-    int left = frogJumpDP1(n - 1, height, dp) + abs(height[n] - height[n - 1]);
+    int left = frogJumpDP1(n - 1, height, dp) + abs(height[n - 1] - height[n - 2]);
     int right = INT_MAX;
-    if(n > 1) {
-        right = frogJumpDP1(n - 2, height, dp) + abs(height[n] - height[n - 2]);
+    if(n > 2) {
+        right = frogJumpDP1(n - 2, height, dp) + abs(height[n - 1] - height[n - 3]);
     }
     return dp[n] = min(left, right);
 }
@@ -62,12 +62,12 @@ int main() {
     int n = 4;
     vector<int> height = {10, 20, 30, 10};
 
-    cout << "Minimum energy is : " << frogJump(n - 1, height);
+    cout << "Minimum energy is : " << frogJump(n, height);
 
     cout << endl;
 
     vector<int> dp1(n+1, -1);
-    cout << "Minimum energy is : " << frogJumpDP1(n - 1, height, dp1);
+    cout << "Minimum energy is : " << frogJumpDP1(n, height, dp1);
 
     cout << endl;
 
