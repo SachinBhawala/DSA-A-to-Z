@@ -31,17 +31,17 @@ bool partitionSubsetDP1(int index, int target, vector<int>& arr, vector<vector<i
 bool partitionSubsetDP2(int n, int k, vector<int>& arr) {
     vector<vector<bool>> dp(n, vector<bool>(k + 1, false));
 
-    for(int i = 0; i < n; i++) {
-        dp[i][0] = true;
+    for(int index = 0; index < n; index++) {
+        dp[index][0] = true;
     }
     if(arr[0] <= k) dp[0][arr[0]] = true;
 
-    for(int i = 1; i < n; i++) {
+    for(int index = 1; index < n; index++) {
         for(int target = 1; target <= k; target++) {
-            bool notTake = dp[i-1][target];
+            bool notTake = dp[index-1][target];
             bool take = false;
-            if(arr[i] <= target) take = dp[i-1][target-arr[i]];
-            dp[i][target] = notTake || take;
+            if(arr[index] <= target) take = dp[index-1][target-arr[index]];
+            dp[index][target] = notTake || take;
         }
     }
 
@@ -55,13 +55,13 @@ bool partitionSubsetDP3(int n, int k, vector<int>& arr) {
     prev[0] = true;
     if(arr[0] <= k) prev[arr[0]] = true;
 
-    for(int i = 1; i < n; i++) {
+    for(int index = 1; index < n; index++) {
         vector<bool> temp(k+1, 0);
         temp[0] = true;
         for(int target = 1; target <= k; target++) {
             bool notTake = prev[target];
             bool take = false;
-            if(arr[i] <= target) take = prev[target-arr[i]];
+            if(arr[index] <= target) take = prev[target-arr[index]];
             temp[target] = notTake || take;
         }
         prev = temp;
