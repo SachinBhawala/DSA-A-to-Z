@@ -1,4 +1,4 @@
-// 2 starting veriable and various ending variable (0 -> n-1)
+// 2 starting variable and various ending variable (0 -> n-1)
 
 #include<bits/stdc++.h>
 using namespace std;
