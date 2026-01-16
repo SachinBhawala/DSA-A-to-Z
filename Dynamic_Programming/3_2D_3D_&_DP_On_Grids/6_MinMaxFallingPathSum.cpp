@@ -3,8 +3,7 @@ using namespace std;
 
 // Recursion : TC = O(3^m), SC = O(m)
 int maxFallingSum(int m, int n, vector<vector<int>>& arr) {
-    int cols = arr[0].size();
-    if(m < 0 || n < 0 || n >= cols) return INT_MIN;
+    if(m < 0 || n < 0 || n >= arr[0].size()) return INT_MIN;
     if(m == 0) return arr[m][n];
 
     int leftDiagonal = maxFallingSum(m-1, n-1, arr);
@@ -19,8 +18,7 @@ int maxFallingSum(int m, int n, vector<vector<int>>& arr) {
 
 // DP (Memoization) : TC = O(m*n), SC = O(m*n + m)
 int maxFallingSumDP1(int m, int n, vector<vector<int>>& arr, vector<vector<int>>& dp) {
-    int cols = arr[0].size();
-    if(m < 0 || n < 0 || n >= cols) return INT_MIN;
+    if(m < 0 || n < 0 || n >= arr[0].size()) return INT_MIN;
     if(m == 0) return arr[m][n];
 
     if(dp[m][n] != -1) return dp[m][n];
