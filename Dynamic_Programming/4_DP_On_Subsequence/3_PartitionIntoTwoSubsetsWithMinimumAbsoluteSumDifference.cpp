@@ -20,7 +20,7 @@ int minAbsSumDiff(int n, int sum, vector<int>& arr) {
     }
 
     int mini = 1e8;
-    for(int i = 0; i <= sum; i++) {
+    for(int i = 0; i <= sum/2; i++) {
         if(dp[n-1][i] == true) {
             int s1 = i;
             int s2 = sum-i;
