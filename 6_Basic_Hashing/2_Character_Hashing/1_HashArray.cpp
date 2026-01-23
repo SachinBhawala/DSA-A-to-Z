@@ -11,7 +11,7 @@ int main() {
 
     // Hashing the characters
     for (char c : s) {
-        hash[c - 'a']++;
+        hash[(unsigned char)c]++;
     }
 
     int q;
@@ -21,11 +21,7 @@ int main() {
         char c;
         cout << "Enter a character to query frequency: ";
         cin >> c;
-        if (c >= 'a' && c <= 'z') {
-            cout << "Frequency of '" << c << "': " << hash[c - 'a'] << endl;
-        } else {
-            cout << "Invalid character. Please enter a lowercase letter." << endl;
-        }
+        cout << "Frequency of '" << c << "': " << hash[(unsigned char)c] << endl;
     }
     return 0;
 }
